@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Binary_tree
 {
-    class Program
+    interface data
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
