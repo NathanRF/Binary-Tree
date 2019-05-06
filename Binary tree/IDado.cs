@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Binary_tree
+namespace Arvore_Binaria___ABB
 {
-    class binary_tree
+    interface IDado
     {
+        string ToString();
+        int CompareTo(object obj);
     }
 }
