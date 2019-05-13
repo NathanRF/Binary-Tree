@@ -12,33 +12,20 @@ namespace Binary_tree
         {
             Binary_tree arvore = new Binary_tree();
 
-            Pessoa a = new Pessoa("Nathan", 'M', 19, 90);
-            Pessoa b = new Pessoa("Nathan R", 'M', 19, 90);
-            Pessoa c = new Pessoa("Mathan R", 'M', 19, 90);
-            Pessoa d = new Pessoa("Rathan R", 'M', 19, 90);
-            Pessoa e = new Pessoa("Zathan R", 'M', 19, 90);
-
+            Pessoa a = new Pessoa("Maximus Decimus Meridius", 'M', 40, 120);
+            Pessoa b = new Pessoa("Marcus Aurelius", 'M', 80, 80);
+            Pessoa c = new Pessoa("Annia Aurelia Galeria Lucilla", 'F', 30, 75);
+            Pessoa d = new Pessoa("Lucius Aurelius Commodus", 'M', 32, 85);
 
             arvore.Insert(a);
             arvore.Insert(b);
             arvore.Insert(c);
             arvore.Insert(d);
-            arvore.Insert(e);
-
-            //string busca = arvore.PesquisaB("Nathan");
-            //Console.WriteLine(arvore.ToString());
-            //Console.WriteLine(arvore.PesquisaA());
-
-            //if (busca == null)
-            //    Console.WriteLine("Não encontrado");
-            //else
-            //    Console.WriteLine(busca);
-
-            //Console.ReadKey();
+            
 
             char esc = ' ';
 
-            while(esc != '4')
+            while(esc != '5')
             {
                 Menu();
                 esc = Console.ReadKey(true).KeyChar;
@@ -90,6 +77,12 @@ namespace Binary_tree
                         break;
                     case '4':
                         Console.Clear();
+                        Console.WriteLine("Pessoas contidas na arvore:");
+                        Console.WriteLine(arvore.ToString());
+                        Console.ReadKey();
+                        break;
+                    case '5':
+                        Console.Clear();
                         Console.WriteLine("Pressione qualquer tecla para sair");
                         Console.ReadKey();
                         break;
@@ -107,7 +100,8 @@ namespace Binary_tree
             Console.WriteLine("1 - Inserir Pessoa");
             Console.WriteLine("2 - Exibir Relatório A");
             Console.WriteLine("3 - Pesquisar a idade e o peso de uma determinada pessoa");
-            Console.WriteLine("4 - Sair\n");
+            Console.WriteLine("4 - Exibir pessoas contidas na arvore");
+            Console.WriteLine("5 - Sair\n");
             Console.Write("Escolha uma função: ");
         }
     }

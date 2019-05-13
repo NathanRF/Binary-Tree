@@ -8,14 +8,14 @@ namespace Binary_tree
 {
     class Binary_tree
     {
-        #region Properties
-        public Nodo Root { get; set; }
-        #endregion
-
         public Binary_tree()
         {
             this.Root = null;
-        }        
+        }
+
+        #region Properties
+        public Nodo Root { get; set; }
+        #endregion
 
         #region Métodos Básicos
         public void Insert(IDado dado)
@@ -23,24 +23,6 @@ namespace Binary_tree
             Nodo aux = new Nodo(dado);
             this.Root = InserirRecursivo(aux, this.Root);
         }
-
-        //public IDado Buscar(int chave)
-        //{
-        //    IDado dado = new Numero(chave); // = new (Tipo da classe) (chave);
-        //    Nodo busca = new Nodo(dado);
-
-        //    return BuscaRecursiva(busca, this.Raiz).MeuDado;
-        //}
-
-        //public IDado Retirar(int chave)
-        //{
-        //    IDado dado = new Numero(chave);
-        //    Nodo retirada = new Nodo(dado);
-        //    Nodo aux;
-        //    RetiradaRec(retirada, this.Raiz, out aux); //declaração dentro dos parametros do método
-
-        //    return aux.MeuDado;
-        //}
 
         public override string ToString()
         {
@@ -71,13 +53,13 @@ namespace Binary_tree
                     case 0:
                         return null;
 
-                    case -1: //filho a esquerda
+                    case -1: //esquerda
                         return onde.Esquerda;
 
-                    case 1: //filho a direita
+                    case 1: //direita
                         return onde.Direita;
 
-                    case 2: //tem dois filhos
+                    case 2: //dois filhos
                         Nodo antecessor = onde.Antecessor();
                         onde.MeuDado = antecessor.MeuDado;
                         onde.Esquerda = RetiradaRec(antecessor, onde.Esquerda, out saida);
@@ -90,7 +72,7 @@ namespace Binary_tree
 
         private Nodo InserirRecursivo(Nodo novo, Nodo raiz)
         {
-            if (raiz == null) //quando encontra uma raiz nula, vc insere novo
+            if (raiz == null)
                 return novo;
 
             if (novo.MeuDado.CompareTo(raiz.MeuDado) < 0)
@@ -130,64 +112,9 @@ namespace Binary_tree
                 return "";
         }
 
-        private int quantHomens(int quant, Nodo raiz) //Tentar remover variável quant, pois o valor de quant nas chamadas recursivas deve ser sempre 0, 
-                                                      //talvez usar duas variáveis para homens e mulheres para fazer as duas operações no mesmo metodo recursivo
-        {
-            if (raiz != null)
-            {
-                if (raiz.MeuDado.SEXO == 'M')
-                {
-                    quant++;
-                }
-
-                quant += (quantHomens(0, raiz.Esquerda));
-                quant += (quantHomens(0, raiz.Direita));
-            }
-
-            return quant;
-        }
-
-        //private string PreOrdem(Nodo raiz)
-        //{
-        //    //Usado para saber quem é filho de quem 
-        //    //Escreve quem é o pai primeiro (inclusive nas sub raízes)
-        //    //É possível recriar a arvoré igualmente, apenas com essa string criada. Graças a isso, serve como backup se usar como fila
-
-        //    if (raiz != null)
-        //    {
-        //        StringBuilder auxImpressao = new StringBuilder();
-        //        auxImpressao.Append(raiz.MeuDado.ToString());
-        //        auxImpressao.Append(PreOrdem(raiz.Esquerda));
-        //        auxImpressao.Append(PreOrdem(raiz.Direita));
-
-        //        return auxImpressao.ToString();
-        //    }
-        //    else
-        //        return "";
-        //}
-
-        //private string PosOrdem(Nodo raiz)
-        //{
-        //    //Usado para saber quem é filho de quem 
-        //    //Escreve quem é o pai primeiro (inclusive nas sub raízes)
-        //    //É possível recriar a arvoré igualmente, apenas com essa string criada. Graças a isso, serve como backup se usar como pilha
-
-        //    if (raiz != null)
-        //    {
-        //        StringBuilder auxImpressao = new StringBuilder();
-
-        //        auxImpressao.Append(PosOrdem(raiz.Direita));
-        //        auxImpressao.Append(PosOrdem(raiz.Esquerda));
-        //        auxImpressao.Append(raiz.MeuDado.ToString());
-
-        //        return auxImpressao.ToString();
-        //    }
-        //    else
-        //        return "";
-        //}
-
         #endregion
        
+
 
         #region Questão A - Informar a quantidade de homens e a média de idade das mulheres
         public string Func_A()

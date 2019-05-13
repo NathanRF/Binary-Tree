@@ -25,13 +25,12 @@ namespace Binary_tree
                 if (this.Direita != null)
                     return 2;
                 else
-                    return -1; //sinal para saber se é um filho pra esquerda
+                    return -1; //filho pra esquerda
             else if (this.Direita != null)
-                return 1; //sinal para saber se é um filho para a direita
+                return 1; //filho para a direita
             else
                 return 0;
         }
-
 
         public Nodo Antecessor()
         {
