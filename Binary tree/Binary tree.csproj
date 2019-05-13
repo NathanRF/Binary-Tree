@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABB.cs" />
+    <Compile Include="Binary_tree.cs" />
     <Compile Include="IDado.cs" />
     <Compile Include="Nodo.cs" />
     <Compile Include="Numero.cs" />
+    <Compile Include="Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
